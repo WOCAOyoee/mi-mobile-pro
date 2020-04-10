@@ -7,7 +7,11 @@ const path = require('path'),
 const config = {
   mode: 'development',
   entry: {
-  	index: path.resolve(__dirname, './src/js/index.js')
+  	index: path.resolve(__dirname, './src/js/index.js'),
+    list: path.resolve(__dirname, './src/js/list.js'),
+    detail: path.resolve(__dirname, './src/js/detail.js'),
+    404: path.resolve(__dirname, './src/js/404.js'),
+    jquery: path.resolve(__dirname, './src/js/jquery.min.js')
   },
   output: {
   	path: path.resolve(__dirname + '/public'),
@@ -45,7 +49,7 @@ const config = {
           	loader: 'postcss-loader',
           	options: {
           		plugin () {
-          			return [ autoprefixer('last 5 versions') ];
+          			return [ Autoprefixer('last 5 versions') ];
           		}
           	}
           },
@@ -71,7 +75,7 @@ const config = {
           	loader: 'postcss-loader',
           	options: {
           		plugin () {
-          			return [ Autoprefixer('last 5 versions') ];
+          			return [ autoprefixer('last 5 versions') ];
           		}
           	}
           }
@@ -105,11 +109,15 @@ const config = {
   devServer: {
   	watchOptions: {
   		ignoreed: /node_modules/
-    },
-    open: true,
+  	},
   	host: 'localhost',
   	port: 3300
   }
-}
+} 
 
 module.exports = config; 
+
+
+
+
+
