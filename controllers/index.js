@@ -7,9 +7,14 @@ class IndexController {
 			phone: true,
 			field: true
 		});
-		console.log(data)
+		const swiperData = data.swiper_data,
+					phoneData = data.phone_data,
+					fieldData = data.field_data
 		await ctx.render('index', {
-			pageConf
+			pageConf,
+			swiperData,
+			phoneData,
+			fieldData,
 		});
 	}
 }

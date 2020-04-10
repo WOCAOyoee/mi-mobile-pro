@@ -1,3 +1,7 @@
 <%- include('layout/header.ejs',{pageConf}) %>
-<h1>hello Yoee</h1>
+<ul>
+  <% for(let i = 0;i < phoneData.length;i++) { %>
+  <li> <%= phoneData[i].phone_name %> </li>
+  <% } %>
+</ul>
 <%- include('layout/foot.ejs') %>
