@@ -20,7 +20,7 @@ module.exports = {
 			repo: 'https://gitee.com/yoee/Mi-mobile-pro.git',
 			path: '/var/www/mi',
 			'pre-deploy': 'git fetch --all',
-			'post-deploy': 'cnpm install && cnpm run prd && pm2 startOrRestart deploy.config.js --env production'
+			'post-deploy': 'cnpm install && npm run prd && pm2 startOrRestart deploy.config.js --env production'
 		}
 	}
 }
