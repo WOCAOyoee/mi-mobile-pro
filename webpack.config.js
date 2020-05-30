@@ -5,7 +5,7 @@ const path = require('path'),
       OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const config = {
-  mode: 'development',
+  mode: 'production',
   entry: {
   	index: path.resolve(__dirname, './src/js/index.js'),
     list: path.resolve(__dirname, './src/js/list.js'),
@@ -49,7 +49,7 @@ const config = {
           	loader: 'postcss-loader',
           	options: {
           		plugin () {
-          			return [ Autoprefixer('last 5 versions') ];
+          			return [ autoprefixer('last 5 versions') ];
           		}
           	}
           },

@@ -4,7 +4,8 @@ const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
-const logger = require('koa-logger')
+const logger = require('koa-logger');
+const _404 = require('./middlewares/404');
 
 const index = require('./routes/index')
 
@@ -30,6 +31,8 @@ app.use(async (ctx, next) => {
   const ms = new Date() - start
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
+
+app.use(_404);
 
 // routes
 app.use(index.routes(), index.allowedMethods())

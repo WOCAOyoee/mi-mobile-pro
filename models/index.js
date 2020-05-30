@@ -1,5 +1,5 @@
-const api = require('../config/config').api;
-const Model = require('../lib/Model');
+const api = require('../config/config').api,
+      Model = require('../lib/Model');
 
 class IndexModel extends Model {
 	getXiaomiDatas (options) {
