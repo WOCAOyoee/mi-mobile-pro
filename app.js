@@ -41,6 +41,8 @@ app.use(index.routes(), index.allowedMethods())
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
 });
-app.listen(3300)
+app.listen(3300,() => {
+  console.log('3300 port')
+})
 
 module.exports = app
